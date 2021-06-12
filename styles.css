@@ -27,7 +27,7 @@ body.active {
 }
 
 header {
-  height: 6rem;
+  height: 5rem;
   max-width: 90vw;
   margin: 0 auto;
   display: flex;
@@ -69,7 +69,7 @@ header > h1.active {
   width: 30px;
   height: 30px;
   border-radius: 50%;
-  background-color: #a5a5a5;
+  background-color: #dadada;
   transition: all 0.5s ease;
   transform: scale(0.9);
 }
@@ -102,6 +102,31 @@ header > h1.active {
   border-radius: 0px;
   background: #ffb8d1;
   box-shadow: inset 10px 10px 22px #d69bb0, inset -10px -10px 22px #ffd5f2;
+  transition: all 1s ease-in-out;
+  transform-style: preserve-3d;
+}
+
+.grid-item > p {
+  display: none;
+  width: 90%;
+  font-size: 1.2rem;
+}
+
+.grid-item:hover {
+  transform: rotateY(180deg);
+}
+
+.grid-item:hover > h1 {
+  display: none;
+}
+
+.grid-item > h1 + p {
+  position: absolute;
+}
+
+.grid-item:hover > p {
+  transform: rotateY(180deg);
+  display: block;
 }
 
 [data-tooltip] {
@@ -182,6 +207,17 @@ header > h1.active {
   border-radius: 0px;
   background: #ffc062;
   box-shadow: inset 10px 10px 22px #d6a152, inset -10px -10px 22px #ffdf72;
+}
+
+.copyright {
+  display: inline-block;
+  position: absolute;
+  bottom: 15px;
+  left: 5%;
+}
+
+.copyright.active {
+  color: #bbbbbb;
 }
 
 @media all and (max-width: 960px) and (min-width: 580px) {
